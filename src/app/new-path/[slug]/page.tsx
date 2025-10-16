@@ -1,10 +1,18 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import Link from 'next/link'
+
+interface RewriteInfo {
+  rewritePath: string
+  originalUrl: string
+  timestamp: string
+  message: string
+}
 
 export default function NewPathDynamicPage() {
   const [currentUrl, setCurrentUrl] = useState('')
-  const [rewriteInfo, setRewriteInfo] = useState<any>(null)
+  const [rewriteInfo, setRewriteInfo] = useState<RewriteInfo | null>(null)
 
   useEffect(() => {
     // 获取当前 URL
@@ -75,18 +83,18 @@ export default function NewPathDynamicPage() {
         </div>
         
         <div className="flex gap-4 justify-center">
-          <a 
+          <Link 
             href="/"
             className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors"
           >
             返回首页
-          </a>
-          <a 
+          </Link>
+          <Link 
             href="/redirect-me"
             className="inline-block bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-lg transition-colors"
           >
             体验重定向
-          </a>
+          </Link>
         </div>
       </div>
     </div>

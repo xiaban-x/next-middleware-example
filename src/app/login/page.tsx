@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 
 export default function LoginPage() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -72,12 +73,12 @@ export default function LoginPage() {
           模拟登录
         </button>
         
-        <a 
+        <Link 
           href="/"
           className="block w-full text-center text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
         >
           返回首页
-        </a>
+        </Link>
       </div>
     </div>
   )

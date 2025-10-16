@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function RewriteVsRedirectDemo() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-purple-100 dark:from-gray-900 dark:to-gray-800">
@@ -126,12 +128,12 @@ if (pathname === '/redirect-me') {
         </div>
 
         <div className="text-center mt-8">
-          <a 
+          <Link 
             href="/"
             className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg transition-colors"
           >
             返回首页
-          </a>
+          </Link>
         </div>
       </div>
     </div>

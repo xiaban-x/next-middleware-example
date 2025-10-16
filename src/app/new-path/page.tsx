@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function NewPathPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 to-pink-100 dark:from-gray-900 dark:to-gray-800 flex items-center justify-center">
@@ -28,12 +30,12 @@ export default function NewPathPage() {
           </div>
         </div>
         
-        <a 
+        <Link 
           href="/"
           className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors"
         >
           返回首页
-        </a>
+        </Link>
       </div>
     </div>
   )

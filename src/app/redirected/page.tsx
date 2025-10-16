@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function RedirectedPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-100 dark:from-gray-900 dark:to-gray-800 flex items-center justify-center">
@@ -25,12 +27,12 @@ export default function RedirectedPage() {
           </div>
         </div>
         
-        <a 
+        <Link 
           href="/"
           className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors"
         >
           返回首页
-        </a>
+        </Link>
       </div>
     </div>
   )

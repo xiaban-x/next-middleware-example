@@ -1,6 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server'
 
+// 扩展 NextRequest 类型以包含 ip 属性
+interface ExtendedNextRequest extends NextRequest {
+  ip?: string
+}
+
 export async function GET(request: NextRequest) {
+  const extendedRequest = request as ExtendedNextRequest
+  
   // 获取请求头信息
   const headers: Record<string, string> = {}
   
@@ -16,7 +23,7 @@ export async function GET(request: NextRequest) {
     method: request.method,
     url: request.url,
     headers: headers,
-    ip: request.ip || request.headers.get('x-forwarded-for') || 'unknown',
+    ip: extendedRequest.ip || request.headers.get('x-forwarded-for') || 'unknown',
     userAgent: request.headers.get('user-agent') || 'unknown',
     // Middleware 添加的自定义头
     customHeaders: {
