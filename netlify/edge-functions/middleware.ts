@@ -1,21 +1,11 @@
 // Netlify Edge Function 示例
 // 这个文件展示了如何在 Netlify 上使用 Edge Functions 处理 Middleware 功能
 
-export default async (request: Request) => {
+const middleware = async (request: Request) => {
   const url = new URL(request.url)
   const { pathname } = url
   
   console.log(`[Netlify Edge Function] ${request.method} ${pathname}`)
-  
-  // 添加自定义响应头
-  const response = new Response(null, {
-    status: 200,
-    headers: {
-      'X-Custom-Header': 'Edge-Function-Processed',
-      'X-Request-Time': new Date().toISOString(),
-      'X-Platform': 'Netlify-Edge',
-    }
-  })
   
   // 路径重写示例
   if (pathname.startsWith('/old-path')) {
@@ -44,3 +34,5 @@ export default async (request: Request) => {
   // 继续处理请求
   return fetch(request)
 }
+
+export default middleware

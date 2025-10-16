@@ -7,9 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "netlify:build": "next build && next export",
+    "netlify:build": "next build",
     "netlify:dev": "netlify dev",
-    "deploy": "netlify deploy --prod"
+    "deploy": "netlify deploy --prod",
+    "build:netlify": "NODE_ENV=production next build"
   },
   "dependencies": {
     "@netlify/next": "^1.4.9",
