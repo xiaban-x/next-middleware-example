@@ -10,6 +10,9 @@
 - **Tailwind CSS** - 现代化的 CSS 框架
 - **ESLint** - 代码质量检查
 - **App Router** - Next.js 13+ 的新路由系统
+- **@netlify/next** - Netlify 增强的 Middleware 功能
+- **Edge Functions** - 支持 Netlify Edge Functions
+- **多平台支持** - 同时支持 Vercel 和 Netlify 部署
 
 ## 📁 项目结构
 
@@ -99,6 +102,32 @@ bun build
 ```bash
 bun start
 ```
+
+## 🌐 Netlify 部署
+
+本项目已优化以支持在 Netlify 上部署，包含以下特性：
+
+- ✅ **@netlify/next 库支持** - 增强的 Middleware 功能
+- ✅ **Edge Functions** - 高性能边缘计算
+- ✅ **自动环境检测** - 智能切换本地/Netlify 模式
+- ✅ **完整配置** - 包含 `netlify.toml` 配置文件
+
+### Netlify 部署步骤
+
+1. **连接 GitHub 仓库到 Netlify**
+2. **设置构建设置**：
+   ```
+   Build command: bun run build
+   Publish directory: .next
+   ```
+3. **设置环境变量**：
+   ```
+   NETLIFY=true
+   NODE_VERSION=18
+   BUN_VERSION=1.2.18
+   ```
+
+详细部署指南请查看 [NETLIFY_DEPLOYMENT.md](./NETLIFY_DEPLOYMENT.md)
 
 ## 🧪 功能测试
 
